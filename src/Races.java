@@ -31,6 +31,22 @@ public enum Races {
         public String toString() {
             return "Half elf";
         }
+    },
+    halfOrc {
+        @Override
+        public String toString() { return "Half-orc"; }
+    },
+    halfling {
+        @Override
+        public String toString() { return "Halfling"; }
+    },
+    human {
+        @Override
+        public String toString() { return "Human"; }
+    },
+    tiefling {
+        @Override
+        public String toString() { return "Tiefling"; }
     }
 
 }

@@ -41,6 +41,18 @@ public enum Subraces {
         public String toString() {
             return "Forest Gnome";
         }
+    },
+    lightfoot (Races.halfling) {
+        @Override
+        public String toString() { return "Lightfoot"; }
+    },
+    stout (Races.halfling) {
+        @Override
+        public String toString() { return "Stout" ; }
+    },
+    asmodeus (Races.tiefling){
+        @Override
+        public String toString() { return "Bloodline of Asmodeus"; }
     }
     ;
     Races race;

@@ -1,4 +1,9 @@
-import java.util.HashMap;
+/*
+abilityProf: Used to had to the proficiency arraylist of the character and loops
+ */
+enum abilityEnum {constitution, strength, athletics, dexterity, sleightOfHand, stealth, intelligence, arcana,
+    history, investigation, nature, religion, wisdom, animalHandling, insight, medecine, perception, survival, charisma, deception,
+    intimidation, performance, persuasion}
 
 public class Abilities {
     int constitution;
@@ -14,6 +19,7 @@ public class Abilities {
     int nature;
     int religion;
     int wisdom;
+    int animalHandling;
     int insight;
     int medecine;
     int perception;
@@ -38,6 +44,7 @@ public class Abilities {
         this.nature = intelligence;
         this.religion = intelligence;
         this.wisdom = wisdom;
+        this.animalHandling = wisdom;
         this.insight = wisdom;
         this.medecine = wisdom;
         this.perception = wisdom;
@@ -211,6 +218,10 @@ public class Abilities {
     public void setWisdom(int wisdom) {
         this.wisdom = wisdom;
     }
+
+    public int getAnimalHandling() { return animalHandling; }
+
+    public void setAnimalHandling(int animalHandling) { this.animalHandling = animalHandling; }
 
     public int getInsight() {
         return insight;

@@ -15,16 +15,16 @@ public class Character {
     ArrayList <Object> proficiencies;
     ArrayList <Object> advantageAgainst;
     ArrayList <Object> otherAbilities;
+    Abilities abilities;
+    ArrayList<Spells> spells;
     int level;
     int hp;
     int currentHp;
     int speed;
     boolean darkvision;
-    Abilities abilities;
-    ArrayList<String> spells;
+    boolean inspired;
 
     public Character() {
-        abilities = new Abilities(10,10,10,10,10,10);
         equippedItems = new ArrayList<>();
         inventory = new ArrayList<>();
         languages = new ArrayList<>();
@@ -33,6 +33,15 @@ public class Character {
         advantageAgainst = new ArrayList<>();
         otherAbilities = new ArrayList<>();
         spells = new ArrayList<>();
+        inspired = false;
+    }
+
+    public Abilities getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(Abilities abilities) {
+        this.abilities = abilities;
     }
 
     public Races getRace() {
