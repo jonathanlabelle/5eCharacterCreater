@@ -19,8 +19,5 @@ TODO half elf : 1 more language
 public class main {
     public static void main(String[] args) {
         Character character = new Character();
-        character.alignment = Alignment.chaoticEvil;
-        createRace.createRace(character, Subraces.mountainDwarf);
-        System.out.println(character.abilities.getStrength());
     }
 }
