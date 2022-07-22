@@ -120,14 +120,6 @@ public class CreateRace {
         }
     }
 
-    private static void addLanguages (Character character, ArrayList<Languages> languages) {
-        character.languages.addAll(languages);
-    }
-
-    private static void addProficiencies (Character character, ArrayList<Object> proficiencies) {
-        character.proficiencies.addAll(proficiencies);
-    }
-
     /*
     Creates a wood elf or a drow
      */
@@ -264,5 +256,13 @@ public class CreateRace {
         if (subrace == Subraces.asmodeus) {
             character.abilities.setIntelligence(character.abilities.getIntelligence() + 1);
         }
+    }
+
+    private static void addLanguages (Character character, ArrayList<Languages> languages) {
+        character.languages.addAll(languages);
+    }
+
+    private static void addProficiencies (Character character, ArrayList<Object> proficiencies) {
+        character.proficiencies.addAll(proficiencies);
     }
 }
