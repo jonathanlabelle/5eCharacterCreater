@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 enum Ancestries { black, blue, brass, bronze, copper, gold, green, red, silver, white }
-
+/*
+TODO ROCK GNOME character.proficiencies.add(Items11.thinkersTool);
+ */
 public class CreateRace {
 
     /*
@@ -114,7 +116,6 @@ public class CreateRace {
             character.spells.add(Spells.minorIllusion);
         } else {
             character.abilities.setConstitution(character.abilities.getConstitution() + 1);
-            character.proficiencies.add(Items.thinkersTool);
             character.otherAbilities.add("Artificer's lore");
             character.otherAbilities.add("Tinker");
         }
