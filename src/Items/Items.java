@@ -1,7 +1,7 @@
 package Items;
 import Character.Character;
 
-public class Items {
+public abstract class Items {
     public String itemName;
     public String cost;
     public int weight;
