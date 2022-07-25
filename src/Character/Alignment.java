@@ -1,3 +1,5 @@
+package Character;
+
 public enum Alignment {
     lawfulGood {
         @Override

@@ -1,3 +1,5 @@
+package Spells;
+
 public enum Spells {
     minorIllusion("minor-illusion") {
         @Override

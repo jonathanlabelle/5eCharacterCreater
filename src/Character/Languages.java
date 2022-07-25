@@ -1,3 +1,5 @@
+package Character;
+
 public enum Languages {
     /*
     COMMON LANGUAGES

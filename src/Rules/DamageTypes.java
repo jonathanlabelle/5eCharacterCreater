@@ -1,3 +1,5 @@
+package Rules;
+
 public enum DamageTypes {
     acid,
     bludgeoning,

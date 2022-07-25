@@ -1,3 +1,5 @@
+package Character;
+
 /*
 abilityProf: Used to had to the proficiency arraylist of the character and loops
  */
