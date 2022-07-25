@@ -1,3 +1,9 @@
+package Character;
+
+import Items.*;
+import Rules.DamageTypes;
+import Spells.Spells;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -59,18 +65,18 @@ public class CreateRace {
     }
 
     private static void createDragonborn(Character character, Ancestries ancestry){
-        character.abilities.setStrength(character.abilities.getStrength() + 2);
-        character.abilities.setCharisma(character.abilities.getCharisma() + 1);
-        character.languages.add(Languages.draconic);
+        character.getAbilities().setStrength(character.getAbilities().getStrength() + 2);
+        character.getAbilities().setCharisma(character.getAbilities().getCharisma() + 1);
+        character.addToLanguages(Languages.draconic);
         character.setSize(Sizes.medium);
         character.setSpeed(30);
-        character.otherAbilities.add("breath-weapon");
+        character.addToOtherAbilities("breath-weapon");
         switch (ancestry) {
-            case black, copper -> character.resistances.add(DamageTypes.acid);
-            case blue, bronze -> character.resistances.add(DamageTypes.lightning);
-            case brass, gold, red -> character.resistances.add(DamageTypes.fire);
-            case green -> character.resistances.add(DamageTypes.poison);
-            case silver, white -> character.resistances.add(DamageTypes.cold);
+            case black, copper -> character.addToResistances(DamageTypes.acid);
+            case blue, bronze -> character.addToResistances(DamageTypes.lightning);
+            case brass, gold, red -> character.addToResistances(DamageTypes.fire);
+            case green -> character.addToResistances(DamageTypes.poison);
+            case silver, white -> character.addToResistances(DamageTypes.cold);
         }
         character.setDarkvision(false);
 
@@ -82,21 +88,21 @@ public class CreateRace {
         character.setSize(Sizes.medium);
         character.setSpeed(25);
         character.setDarkvision(true);
-        character.abilities.setConstitution(character.abilities.getConstitution() + 2);
-        character.resistances.add(DamageTypes.poison);
-        character.advantageAgainst.add(DamageTypes.poison);
-        character.otherAbilities.add("Stonecuning");
+        character.getAbilities().setConstitution(character.getAbilities().getConstitution() + 2);
+        character.addToResistances(DamageTypes.poison);
+        character.addToAdvantageAgainst(DamageTypes.poison);
+        character.addToOtherAbilities("Stonecuning");
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.dwarvish));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         ArrayList<Object> proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.battleaxe, WeaponTypes.handaxe,
                 WeaponTypes.handaxe, WeaponTypes.warharmmer));
-        addProficiencies(character, proficiencies);
+        Character.addMultipleProficiencies(character, proficiencies);
         if (subrace == Subraces.mountainDwarf) {
-            character.abilities.setStrength(character.abilities.getStrength() + 2);
-            proficiencies = new ArrayList<Object>(Arrays.asList(ArmorTypes.lightArrmor, ArmorTypes.mediumArmor));
-            addProficiencies(character, proficiencies);
+            character.getAbilities().setStrength(character.getAbilities().getStrength() + 2);
+            proficiencies = new ArrayList<Object>(Arrays.asList(ArmorTypes.lightArmor, ArmorTypes.mediumArmor));
+            Character.addMultipleProficiencies(character, proficiencies);
         } else {
-            character.abilities.setWisdom(character.abilities.getWisdom() + 1);
+            character.getAbilities().setWisdom(character.getAbilities().getWisdom() + 1);
             character.setHp(character.getHp() + 1);
         }
     }
@@ -107,17 +113,17 @@ public class CreateRace {
         character.setSize(Sizes.small);
         character.setSpeed(25);
         character.setDarkvision(true);
-        character.otherAbilities.add("Gnome cunning");
+        character.addToOtherAbilities("Gnome cunning");
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.gnomish));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         if (subrace == Subraces.forestGnome) {
-            character.abilities.setDexterity(character.abilities.getDexterity() + 1);
-            character.otherAbilities.add("Speak with animals");
-            character.spells.add(Spells.minorIllusion);
+            character.getAbilities().setDexterity(character.getAbilities().getDexterity() + 1);
+            character.addToOtherAbilities("Speak with animals");
+            character.addToSpells(Spells.minorIllusion);
         } else {
-            character.abilities.setConstitution(character.abilities.getConstitution() + 1);
-            character.otherAbilities.add("Artificer's lore");
-            character.otherAbilities.add("Tinker");
+            character.getAbilities().setConstitution(character.getAbilities().getConstitution() + 1);
+            character.addToOtherAbilities("Artificer's lore");
+            character.addToOtherAbilities("Tinker");
         }
     }
 
@@ -127,30 +133,30 @@ public class CreateRace {
     private static void createElf(Character character, Subraces subrace) {
         character.setRace(Races.elf);
         character.setSubrace(subrace);
-        character.abilities.setDexterity(character.abilities.getDexterity() + 2);
+        character.getAbilities().setDexterity(character.getAbilities().getDexterity() + 2);
         character.setSize(Sizes.medium);
         character.setSpeed(30);
         character.setDarkvision(true);
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.elvish));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         ArrayList<Object> proficiencies = new ArrayList<Object>(Arrays.asList(abilityEnum.perception));
-        addProficiencies(character, proficiencies);
-        character.advantageAgainst.add(Conditions.charmed);
-        character.otherAbilities.add("Can't be put asleep by magic");
+        Character.addMultipleProficiencies(character, proficiencies);
+        character.addToAdvantageAgainst(Conditions.charmed);
+        character.addToOtherAbilities("Can't be put asleep by magic");
         if (subrace == Subraces.woodElf) {
-            character.abilities.setWisdom(character.abilities.getWisdom() + 1);
+            character.getAbilities().setWisdom(character.getAbilities().getWisdom() + 1);
             character.setSpeed(35);
             proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.longsword, WeaponTypes.shortsword,
                     WeaponTypes.shortbow, WeaponTypes.longbow));
-            addProficiencies(character, proficiencies);
-            character.otherAbilities.add("Mask of the wild");
+            Character.addMultipleProficiencies(character, proficiencies);
+            character.addToOtherAbilities("Mask of the wild");
         } else {
-            character.otherAbilities.add("Superior darkvision");
-            character.otherAbilities.add("Drow magic");
+            character.addToOtherAbilities("Superior darkvision");
+            character.addToOtherAbilities("Drow magic");
             proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.rapier, WeaponTypes.shortsword,
                     WeaponTypes.handCrossbow));
-            addProficiencies(character, proficiencies);
-            character.abilities.setCharisma(character.abilities.getCharisma() + 1);
+            Character.addMultipleProficiencies(character, proficiencies);
+            character.getAbilities().setCharisma(character.getAbilities().getCharisma() + 1);
         }
     }
 
@@ -160,39 +166,39 @@ public class CreateRace {
     private static void createElf(Character character, Races race, Languages extraLanguage) {
         character.setRace(race);
         character.setSubrace(Subraces.highElf);
-        character.abilities.setDexterity(character.abilities.getDexterity() + 2);
+        character.getAbilities().setDexterity(character.getAbilities().getDexterity() + 2);
         character.setSize(Sizes.medium);
         character.setSpeed(30);
         character.setDarkvision(true);
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.elvish,
                 extraLanguage));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         ArrayList<Object> proficiencies = new ArrayList<Object>(Arrays.asList(abilityEnum.perception));
-        addProficiencies(character, proficiencies);
-        character.advantageAgainst.add(Conditions.charmed);
-        character.otherAbilities.add("Can't be put asleep by magic");
-        character.abilities.setIntelligence(character.abilities.getIntelligence() + 1);
+        Character.addMultipleProficiencies(character, proficiencies);
+        character.addToAdvantageAgainst(Conditions.charmed);
+        character.addToOtherAbilities("Can't be put asleep by magic");
+        character.getAbilities().setIntelligence(character.getAbilities().getIntelligence() + 1);
         proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.longsword, WeaponTypes.shortsword,
                 WeaponTypes.shortbow, WeaponTypes.longbow));
-        addProficiencies(character, proficiencies);
+        Character.addMultipleProficiencies(character, proficiencies);
     }
 
     private static void createHalfElf(Character character, Languages extraLanguage, abilityEnum ability1,
                                       abilityEnum ability2, abilityEnum extraProficiency1,
                                       abilityEnum extraProficiency2) {
-        character.abilities.setCharisma(character.abilities.getCharisma() + 2);
+        character.getAbilities().setCharisma(character.getAbilities().getCharisma() + 2);
         character.setSize(Sizes.medium);
         character.setSpeed(30);
         character.setDarkvision(true);
-        character.proficiencies.add(extraProficiency1);
-        character.proficiencies.add(extraProficiency2);
+        character.addToProficiencies(extraProficiency1);
+        character.addToProficiencies(extraProficiency2);
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.elvish,
                 extraLanguage));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         abilityEnum[] abilities = new abilityEnum[]{ability1, ability2};
         Utils.updateUnknownAbilities(character, abilities);
-        character.advantageAgainst.add(Conditions.charmed);
-        character.otherAbilities.add("Magic can't put you to sleep");
+        character.addToAdvantageAgainst(Conditions.charmed);
+        character.addToOtherAbilities("Magic can't put you to sleep");
     }
 
     private static void createHalfOrc(Character character) {
@@ -200,11 +206,11 @@ public class CreateRace {
         character.setSize(Sizes.medium);
         character.setSpeed(30);
         character.setDarkvision(true);
-        character.proficiencies.add(abilityEnum.intimidation);
-        character.otherAbilities.add("Relentless endurance");
-        character.otherAbilities.add("Savage Attacks");
+        character.addToProficiencies(abilityEnum.intimidation);
+        character.addToOtherAbilities("Relentless endurance");
+        character.addToOtherAbilities("Savage Attacks");
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.orc));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
     }
 
     private static void createHalfling(Character character, Subraces subrace) {
@@ -213,19 +219,19 @@ public class CreateRace {
         character.setSize(Sizes.small);
         character.setSpeed(25);
         character.setDarkvision(false);
-        character.abilities.setDexterity(character.abilities.getDexterity() + 2);
-        character.otherAbilities.add("Lucky");
-        character.otherAbilities.add("Brave");
-        character.otherAbilities.add("Nimble");
+        character.getAbilities().setDexterity(character.getAbilities().getDexterity() + 2);
+        character.addToOtherAbilities("Lucky");
+        character.addToOtherAbilities("Brave");
+        character.addToOtherAbilities("Nimble");
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.halfling));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         if (subrace == Subraces.lightfoot) {
-            character.abilities.setCharisma(character.abilities.getCharisma() + 1);
-            character.otherAbilities.add("Naturaly Stealthy");
+            character.getAbilities().setCharisma(character.getAbilities().getCharisma() + 1);
+            character.addToOtherAbilities("Naturaly Stealthy");
         } else {
-            character.abilities.setConstitution(character.abilities.getConstitution() + 1);
-            character.resistances.add(DamageTypes.poison);
-            character.advantageAgainst.add(DamageTypes.poison);
+            character.getAbilities().setConstitution(character.getAbilities().getConstitution() + 1);
+            character.addToResistances(DamageTypes.poison);
+            character.addToAdvantageAgainst(DamageTypes.poison);
         }
     }
 
@@ -235,13 +241,13 @@ public class CreateRace {
         character.setSpeed(30);
         character.setDarkvision(false);
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, extraLanguage));
-        addLanguages(character, languages);
-        character.abilities.setConstitution(character.abilities.getConstitution() + 1);
-        character.abilities.setStrength(character.abilities.getStrength() + 1);
-        character.abilities.setDexterity(character.abilities.getDexterity() + 1);
-        character.abilities.setIntelligence(character.abilities.getIntelligence() + 1);
-        character.abilities.setWisdom(character.abilities.getWisdom() + 1);
-        character.abilities.setCharisma(character.abilities.getCharisma() + 1);
+        Character.addMultipleLanguages(character, languages);
+        character.getAbilities().setConstitution(character.getAbilities().getConstitution() + 1);
+        character.getAbilities().setStrength(character.getAbilities().getStrength() + 1);
+        character.getAbilities().setDexterity(character.getAbilities().getDexterity() + 1);
+        character.getAbilities().setIntelligence(character.getAbilities().getIntelligence() + 1);
+        character.getAbilities().setWisdom(character.getAbilities().getWisdom() + 1);
+        character.getAbilities().setCharisma(character.getAbilities().getCharisma() + 1);
     }
 
     private static void createTiefling(Character character, Subraces subrace) {
@@ -250,20 +256,12 @@ public class CreateRace {
         character.setSize(Sizes.medium);
         character.setSpeed(30);
         character.setDarkvision(false);
-        character.abilities.setCharisma(character.abilities.getCharisma() + 2);
-        character.resistances.add(DamageTypes.fire);
+        character.getAbilities().setCharisma(character.getAbilities().getCharisma() + 2);
+        character.addToResistances(DamageTypes.fire);
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.infernal));
-        addLanguages(character, languages);
+        Character.addMultipleLanguages(character, languages);
         if (subrace == Subraces.asmodeus) {
-            character.abilities.setIntelligence(character.abilities.getIntelligence() + 1);
+            character.getAbilities().setIntelligence(character.getAbilities().getIntelligence() + 1);
         }
-    }
-
-    private static void addLanguages (Character character, ArrayList<Languages> languages) {
-        character.languages.addAll(languages);
-    }
-
-    private static void addProficiencies (Character character, ArrayList<Object> proficiencies) {
-        character.proficiencies.addAll(proficiencies);
     }
 }

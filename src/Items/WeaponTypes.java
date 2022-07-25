@@ -1,3 +1,5 @@
+package Items;
+
 enum Type { martial, simple}
 enum Range {melee, ranged}
 

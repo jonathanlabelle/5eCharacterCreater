@@ -1,4 +1,6 @@
-public enum Currency {
+package Currency;
+
+public enum CurrencyTypes {
     cp {
         @Override
         public String toString() {

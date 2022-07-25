@@ -1,3 +1,5 @@
+package Character;
+
 public enum Conditions {
     blinded { @Override
         public String toString() { return "Blinded"; }

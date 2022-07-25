@@ -1,3 +1,5 @@
+package Character;
+
 public enum Subraces {
     mountainDwarf (Races.dwarf){
         @Override

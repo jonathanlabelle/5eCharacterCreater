@@ -1,8 +1,10 @@
+package Character;
+
 public enum Backgrounds {
 
     acolyte (
             "Skill proficiencies: Insight and Religion.\n" +
-            "Languages: 2 of your choice.\n" +
+            "Character.Languages: 2 of your choice.\n" +
             "Equipment: 1 Holy symbol, 1 payer book, 5 sticks of incense vestments, common clothes, pouch with 15 gp"
     ) {
         @Override
@@ -23,7 +25,7 @@ public enum Backgrounds {
     },
     criminal (
             "Skill proficiencies: Deception, Stealth.\n" +
-            "Tools proficiencies: 1 of (Dice set or Playing card set), Thieves tools.\n" +
+            "Tools proficiencies: 1 of (Dice.Dice set or Playing card set), Thieves tools.\n" +
             "Equipment: 1 crowbar, common clothes, 15gp"
     ) {
         @Override
@@ -159,7 +161,7 @@ public enum Backgrounds {
     },
     spy (
             "Skill proficiencies: Deception, Stealth.\n" +
-            "Tools proficiencies: 1 of (Dice set or Playing card set), Thieves tools.\n" +
+            "Tools proficiencies: 1 of (Dice.Dice set or Playing card set), Thieves tools.\n" +
             "Equipment: 1 crowbar, common clothes, 15gp"
     ) {
         @Override
