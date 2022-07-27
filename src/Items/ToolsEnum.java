@@ -1,6 +1,36 @@
 package Items;
 
 public enum ToolsEnum {
+    alchemistsSupplies,
+    bagpipes,
+    brewersSupplies,
+    calligraphersSupplies,
+    carpentersTools,
+    cartographersTools,
+    cobblersTools,
+    cooksUtensils,
     disguiseKit,
-    forgeryKit
+    drum,
+    dulcimer,
+    flute,
+    forgeryKit,
+    glassblowersTools,
+    herbalismKit,
+    horn,
+    jewelersTools,
+    leatherworkersTools,
+    lute,
+    lyre,
+    masonTools,
+    navigatorsTools,
+    paintersSupplies,
+    panFlute,
+    pottersTools,
+    shawn,
+    smithsTools,
+    thievesTool,
+    thinkersTools,
+    viol,
+    weaversTools,
+    woodcarversTools
 }
