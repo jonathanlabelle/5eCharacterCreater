@@ -3,7 +3,7 @@ package Character;
 /*
 abilityProf: Used to had to the proficiency arraylist of the character and loops
  */
-enum abilityEnum {constitution, strength, athletics, dexterity, sleightOfHand, stealth, intelligence, arcana,
+enum abilityEnum {constitution, strength, athletics, dexterity, acrobatics, sleightOfHand, stealth, intelligence, arcana,
     history, investigation, nature, religion, wisdom, animalHandling, insight, medecine, perception, survival, charisma, deception,
     intimidation, performance, persuasion}
 
@@ -12,6 +12,7 @@ public class Abilities {
     int strength;
     int athletics;
     int dexterity;
+    int acrobatics;
     int sleightOfHand;
     int stealth;
     int intelligence;
@@ -37,6 +38,7 @@ public class Abilities {
         this.strength = strength;
         this.athletics = strength;
         this.dexterity = dexterity;
+        this.acrobatics = dexterity;
         this.sleightOfHand = dexterity;
         this.stealth = dexterity;
         this.intelligence = intelligence;
@@ -143,6 +145,14 @@ public class Abilities {
 
     public int getDexterity() {
         return dexterity;
+    }
+
+    public void setAcrobatics(int acrobatics) {
+        this.acrobatics = acrobatics;
+    }
+
+    public int getAcrobatics() {
+        return acrobatics;
     }
 
     public void setDexterity(int dexterity) {
