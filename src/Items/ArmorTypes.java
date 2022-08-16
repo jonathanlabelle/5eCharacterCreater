@@ -18,5 +18,11 @@ public enum ArmorTypes {
         public String toString() {
             return "Heavy armor";
         }
+    },
+    shield {
+        @Override
+        public String toString() {
+            return "Shield";
+        }
     }
 }

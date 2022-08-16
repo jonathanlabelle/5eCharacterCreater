@@ -1,7 +1,4 @@
-package Character;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+package PlayerCharacter;
 
 public enum Races {
     dragonborn {

@@ -1,4 +1,4 @@
-package Character;
+package PlayerCharacter;
 
 public enum Subraces {
     mountainDwarf (Races.dwarf){
@@ -8,7 +8,6 @@ public enum Subraces {
         }
     },
     hillDwarf (Races.dwarf){
-        Races race = Races.dwarf;
         @Override
         public String toString() {
             return "Hill dwarf";
@@ -63,6 +62,6 @@ public enum Subraces {
     }
     public static Races getRace(Subraces subrace) {
         Subraces[] constants = Subraces.values();
-        return constants[mountainDwarf.ordinal()].race;
+        return constants[subrace.ordinal()].race;
     }
 }

@@ -1,4 +1,4 @@
-package Character;
+package PlayerCharacter;
 
 public enum Backgrounds {
 

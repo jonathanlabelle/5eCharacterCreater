@@ -1,6 +1,5 @@
-package Character;
+package PlayerCharacter;
 
-import Currency.CurrencyTypes;
 import Items.Items;
 
 import java.util.ArrayList;

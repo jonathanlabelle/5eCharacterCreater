@@ -1,29 +1,32 @@
-package Character;
+package PlayerCharacter;
 
+import CharacterClass.CharacterClassesEnum;
 import Currency.Currency;
 import Items.Items;
 import Rules.DamageTypes;
 import Spells.Spells;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
-public class Character {
+public class PlayerCharacter {
     private String name;
     private Races race;
     private Subraces subrace;
     private Backgrounds background;
-    private Classes classes;
+    private CharacterClassesEnum charClass;
     private Sizes size;
+    private int AC;
     private Alignment alignment;
     private ArrayList <Items> equippedItems;
     public InventoryItem inventory;
-    private ArrayList <Languages> languages;
-    private ArrayList <DamageTypes> resistances;
-    private ArrayList <Object> proficiencies;
-    private ArrayList <Object> advantageAgainst;
-    private ArrayList <Object> otherAbilities;
+    private HashSet <Languages> languages;
+    private HashSet <DamageTypes> resistances;
+    private HashSet <Object> proficiencies;
+    private HashSet <Object> advantageAgainst;
+    private HashSet <Object> otherAbilities;
     private Abilities abilities;
-    private ArrayList<Spells> spells;
+    private HashSet <Spells> spells;
     public Currency currency;
     private int level;
     private int hp;
@@ -32,21 +35,20 @@ public class Character {
     private boolean darkvision;
     private boolean inspired;
 
-    public Character() {
+    public PlayerCharacter() {
         equippedItems = new ArrayList<>();
         inventory = new InventoryItem();
-        languages = new ArrayList<>();
-        resistances = new ArrayList<>();
-        proficiencies = new ArrayList<>();
-        advantageAgainst = new ArrayList<>();
-        otherAbilities = new ArrayList<>();
-        spells = new ArrayList<>();
+        languages = new HashSet<>();
+        resistances = new HashSet<>();
+        proficiencies = new HashSet<>();
+        advantageAgainst = new HashSet<>();
+        otherAbilities = new HashSet<>();
+        spells = new HashSet<>();
         currency = new Currency();
         inspired = false;
     }
 
     public void addToEquippedItems(Items item) { equippedItems.add(item);}
-
 
     public void addToLanguages(Languages language) {
         languages.add(language);
@@ -58,6 +60,14 @@ public class Character {
 
     public void addToProficiencies(Object proficiency) {
         proficiencies.add(proficiency);
+    }
+
+    public CharacterClassesEnum getCharClass() {
+        return charClass;
+    }
+
+    public void setCharClass(CharacterClassesEnum charClass) {
+        this.charClass = charClass;
     }
 
     public void addToAdvantageAgainst(Object advantage) {
@@ -72,34 +82,35 @@ public class Character {
         spells.add(spell);
     }
 
-    public static void addMultipleEquippedItems(Character character, ArrayList<Items> items) {
-        character.equippedItems.addAll(items);
+    public static void addMultipleEquippedItems(PlayerCharacter playerCharacter, ArrayList<Items> items) {
+        playerCharacter.equippedItems.addAll(items);
     }
 
-    public static void addMultipleLanguages(Character character, ArrayList<Languages> language) {
-        character.languages.addAll(language);
+    public static void addMultipleLanguages(PlayerCharacter playerCharacter, ArrayList<Languages> language) {
+        playerCharacter.languages.addAll(language);
     }
 
-    public static void addMultipleResistances(Character character, ArrayList<DamageTypes> resistances) {
-        character.resistances.addAll(resistances);
+    public static void addMultipleResistances(PlayerCharacter playerCharacter, ArrayList<DamageTypes> resistances) {
+        playerCharacter.resistances.addAll(resistances);
     }
 
-    public static void addMultipleProficiencies(Character character, ArrayList<Object> proficiencies) {
-        character.proficiencies.addAll(proficiencies);
+    public static void addMultipleProficiencies(PlayerCharacter playerCharacter, ArrayList<Object> proficiencies) {
+        playerCharacter.proficiencies.addAll(proficiencies);
     }
 
-    public static void addMultipleAdvantageAgainst(Character character, ArrayList<Object> advantages) {
-        character.advantageAgainst.addAll(advantages);
+    public static void addMultipleAdvantageAgainst(PlayerCharacter playerCharacter, ArrayList<Object> advantages) {
+        playerCharacter.advantageAgainst.addAll(advantages);
     }
 
-    public static void addMultipleOtherAbilities(Character character, ArrayList<Object> abilities) {
-        character.otherAbilities.addAll(abilities);
+    public static void addMultipleOtherAbilities(PlayerCharacter playerCharacter, ArrayList<Object> abilities) {
+        playerCharacter.otherAbilities.addAll(abilities);
     }
 
-    public static void addMultipleSpells(Character character, ArrayList<Spells> spells) {
-        character.spells.addAll(spells);
+    public static void addMultipleSpells(PlayerCharacter playerCharacter, ArrayList<Spells> spells) {
+        playerCharacter.spells.addAll(spells);
     }
 
+    public int getAC() { return AC; }
 
     public ArrayList<Items> getEquippedItems() {
         return equippedItems;
@@ -109,51 +120,51 @@ public class Character {
         this.equippedItems = equippedItems;
     }
 
-    public ArrayList<Languages> getLanguages() {
+    public HashSet <Languages> getLanguages() {
         return languages;
     }
 
-    public void setLanguages(ArrayList<Languages> languages) {
+    public void setLanguages(HashSet <Languages> languages) {
         this.languages = languages;
     }
 
-    public ArrayList<DamageTypes> getResistances() {
+    public HashSet<DamageTypes> getResistances() {
         return resistances;
     }
 
-    public void setResistances(ArrayList<DamageTypes> resistances) {
+    public void setResistances(HashSet<DamageTypes> resistances) {
         this.resistances = resistances;
     }
 
-    public ArrayList<Object> getProficiencies() {
+    public HashSet<Object> getProficiencies() {
         return proficiencies;
     }
 
-    public void setProficiencies(ArrayList<Object> proficiencies) {
+    public void setProficiencies(HashSet<Object> proficiencies) {
         this.proficiencies = proficiencies;
     }
 
-    public ArrayList<Object> getAdvantageAgainst() {
+    public HashSet<Object> getAdvantageAgainst() {
         return advantageAgainst;
     }
 
-    public void setAdvantageAgainst(ArrayList<Object> advantageAgainst) {
+    public void setAdvantageAgainst(HashSet<Object> advantageAgainst) {
         this.advantageAgainst = advantageAgainst;
     }
 
-    public ArrayList<Object> getOtherAbilities() {
+    public HashSet<Object> getOtherAbilities() {
         return otherAbilities;
     }
 
-    public void setOtherAbilities(ArrayList<Object> otherAbilities) {
+    public void setOtherAbilities(HashSet<Object> otherAbilities) {
         this.otherAbilities = otherAbilities;
     }
 
-    public ArrayList<Spells> getSpells() {
+    public HashSet<Spells> getSpells() {
         return spells;
     }
 
-    public void setSpells(ArrayList<Spells> spells) {
+    public void setSpells(HashSet<Spells> spells) {
         this.spells = spells;
     }
 
