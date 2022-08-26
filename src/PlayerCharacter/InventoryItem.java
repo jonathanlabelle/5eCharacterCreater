@@ -4,6 +4,7 @@ import Items.Items;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class InventoryItem {
     private static HashMap<Items, Integer> items = new HashMap<Items, Integer>();
@@ -24,6 +25,13 @@ public class InventoryItem {
         }
     }
 
+    public static StringBuilder printInventory(InventoryItem inventory) {
+        StringBuilder s = new StringBuilder();
+        for (Map.Entry<Items, Integer> item : inventory.getItems().entrySet()) {
+            s.append(item.getValue()).append(" - ").append(item.getKey().itemName).append("\n");
+        }
+        return s;
+    }
     public HashMap<Items, Integer> getItems() {
         return items;
     }

@@ -16,9 +16,6 @@ public class Barbarian extends CharacterClass {
     private static final HashSet<ArmorTypes> armorProficiencies = new HashSet<ArmorTypes>(Arrays.asList(
             ArmorTypes.lightArmor, ArmorTypes.mediumArmor, ArmorTypes.shield
     ));
-    private static final HashSet<WeaponTypes> weaponProficiencies = new HashSet<WeaponTypes>(Arrays.asList(
-            WeaponTypes.handCrossbow
-    ));
 
     public Barbarian(HashSet<WeaponTypes> weaponProficiencies, HashSet<Items> toolProficiencies,
                      HashSet<abilityEnum> savingThrows, HashSet<abilityEnum> skillsProficiencies) {

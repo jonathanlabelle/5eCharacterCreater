@@ -22,7 +22,7 @@ public class PlayerCharacter {
     public InventoryItem inventory;
     private HashSet <Languages> languages;
     private HashSet <DamageTypes> resistances;
-    private HashSet <Object> proficiencies;
+    public static HashSet <Object> proficiencies;
     private HashSet <Object> advantageAgainst;
     private HashSet <Object> otherAbilities;
     private Abilities abilities;
@@ -47,6 +47,7 @@ public class PlayerCharacter {
         currency = new Currency();
         inspired = false;
     }
+
 
     public void addToEquippedItems(Items item) { equippedItems.add(item);}
 
@@ -110,6 +111,14 @@ public class PlayerCharacter {
         playerCharacter.spells.addAll(spells);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getAC() { return AC; }
 
     public ArrayList<Items> getEquippedItems() {
@@ -118,6 +127,14 @@ public class PlayerCharacter {
 
     public void setEquippedItems(ArrayList<Items> equippedItems) {
         this.equippedItems = equippedItems;
+    }
+
+    public Alignment getAlignment() {
+        return alignment;
+    }
+
+    public void setAlignment(Alignment alignment) {
+        this.alignment = alignment;
     }
 
     public HashSet <Languages> getLanguages() {
@@ -242,5 +259,31 @@ public class PlayerCharacter {
 
     public Backgrounds getBackground() { return background; }
 
+    public InventoryItem getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem inventory) {
+        this.inventory = inventory;
+    }
+
     public void setBackground(Backgrounds background) { this.background = background; }
+
+    public String toString() {
+        return "" +
+                "Name : " + getName() +
+                "\nRace : " + getRace() +
+                "\nSubrace : " + getSubrace() +
+                "\nBackground : " + getBackground() +
+                "\nClass : " + getCharClass() +
+                "\nHP : " + getHp() +
+                "\nSize : " + getSize() +
+                "\nAC : " + getAC() +
+                "\nAbilities: Strength : " + getAbilities().getStrength() + " Dexterity : " + getAbilities().getDexterity() +
+                " Constitution : " + getAbilities().getConstitution() + " Intelligence : " + getAbilities().getIntelligence() +
+                " Wisdom : " + getAbilities().getWisdom() + " Charisma : " + getAbilities().getCharisma() +
+                "\nAlignment : " + getAlignment() +
+                "\nEquipped items : " + getEquippedItems() +
+                "\nInventory : \n" + InventoryItem.printInventory(getInventory());
+    }
 }

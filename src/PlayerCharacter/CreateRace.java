@@ -94,8 +94,8 @@ public class CreateRace {
         playerCharacter.addToOtherAbilities("Stonecuning");
         ArrayList<Languages> languages = new ArrayList<Languages>(Arrays.asList(Languages.common, Languages.dwarvish));
         PlayerCharacter.addMultipleLanguages(playerCharacter, languages);
-        ArrayList<Object> proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.battleaxe, WeaponTypes.handaxe,
-                WeaponTypes.handaxe, WeaponTypes.warharmmer));
+        ArrayList<Object> proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.battleaxe,
+                WeaponTypes.handAxe, WeaponTypes.warHammer));
         PlayerCharacter.addMultipleProficiencies(playerCharacter, proficiencies);
         if (subrace == Subraces.mountainDwarf) {
             playerCharacter.getAbilities().setStrength(playerCharacter.getAbilities().getStrength() + 2);
@@ -146,15 +146,15 @@ public class CreateRace {
         if (subrace == Subraces.woodElf) {
             playerCharacter.getAbilities().setWisdom(playerCharacter.getAbilities().getWisdom() + 1);
             playerCharacter.setSpeed(35);
-            proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.longsword, WeaponTypes.shortsword,
-                    WeaponTypes.shortbow, WeaponTypes.longbow));
+            proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.longSword, WeaponTypes.shortSword,
+                    WeaponTypes.shortBow, WeaponTypes.longbow));
             PlayerCharacter.addMultipleProficiencies(playerCharacter, proficiencies);
             playerCharacter.addToOtherAbilities("Mask of the wild");
         } else {
             playerCharacter.addToOtherAbilities("Superior darkvision");
             playerCharacter.addToOtherAbilities("Drow magic");
-            proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.rapier, WeaponTypes.shortsword,
-                    WeaponTypes.handCrossbow));
+            proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.rapier, WeaponTypes.shortSword,
+                    WeaponTypes.handCrossBow));
             PlayerCharacter.addMultipleProficiencies(playerCharacter, proficiencies);
             playerCharacter.getAbilities().setCharisma(playerCharacter.getAbilities().getCharisma() + 1);
         }
@@ -178,8 +178,8 @@ public class CreateRace {
         playerCharacter.addToAdvantageAgainst(Conditions.charmed);
         playerCharacter.addToOtherAbilities("Can't be put asleep by magic");
         playerCharacter.getAbilities().setIntelligence(playerCharacter.getAbilities().getIntelligence() + 1);
-        proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.longsword, WeaponTypes.shortsword,
-                WeaponTypes.shortbow, WeaponTypes.longbow));
+        proficiencies = new ArrayList<Object>(Arrays.asList(WeaponTypes.longSword, WeaponTypes.shortSword,
+                WeaponTypes.shortBow, WeaponTypes.longbow));
         PlayerCharacter.addMultipleProficiencies(playerCharacter, proficiencies);
     }
 

@@ -9,7 +9,7 @@ import java.util.HashSet;
 
 public abstract class CharacterClass {
     private int staringHP;
-    private static String hitDie;
+    private String hitDie;
     private HashSet <ArmorTypes> armorProficiencies;
     private HashSet <WeaponTypes> weaponProficiencies;
     private HashSet <Items> toolProficiencies;

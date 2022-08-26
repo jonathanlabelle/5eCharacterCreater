@@ -31,6 +31,8 @@ public class AdventuringGear extends Items {
         put(AdventuringGearEnum.quill, new AdventuringGear("Quill", "1sp", 0));
         put(AdventuringGearEnum.scrollCase, new AdventuringGear("Scroll case", "2gp", 4));
         put(AdventuringGearEnum.scrollOfPedigree, new AdventuringGear("Scroll of pedigree", "0", 0));
+        put(AdventuringGearEnum.setOfDice, new AdventuringGear("Set of dice", "1sp", 0));
+        put(AdventuringGearEnum.setOfPlayingCards, new AdventuringGear("Set of playing cards", "4sp", 0));
         put(AdventuringGearEnum.shovel, new AdventuringGear("Shovel", "1gp", 1));
         put(AdventuringGearEnum.silkRope, new AdventuringGear("Silk rope (50ft)", "10gp", 5));
         put(AdventuringGearEnum.signetRing, new AdventuringGear("Signet ring", "5gp", 0));

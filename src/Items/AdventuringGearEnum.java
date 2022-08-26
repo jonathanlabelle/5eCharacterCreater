@@ -22,6 +22,8 @@ public enum AdventuringGearEnum {
     quill,
     scrollCase,
     scrollOfPedigree,
+    setOfDice,
+    setOfPlayingCards,
     signetRing,
     shovel,
     silkRope,
